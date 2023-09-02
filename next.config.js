@@ -8,6 +8,8 @@ const nextConfig = {
       'lh3.googleusercontent.com',
       'avatars.githubusercontent.com',
       'res.cloudinary.com',
+      'i.pinimg.com',
+      'pm1.aminoapps.com',
     ],
   },
 };

@@ -30,23 +30,30 @@ const ConversationBox: React.FC<ConversationBoxProps> = ({
 
     const lastMessage = useMemo(() => {
         const messages = data.messages || [];
-
-        return messages[-1];
+        return messages[messages?.length - 1];
     }, [data.messages])
 
     const userEmail = useMemo(() => {
         return session?.data?.user?.email
     }, [session?.data?.user?.email])
 
+    const isOwn = useMemo(() => {
+        return session?.data?.user?.email === lastMessage?.sender?.email
+    }, [lastMessage?.sender?.email, session?.data?.user?.email]);
+
+
     const hasSeen = useMemo(() => {
         if (!lastMessage) return false;
 
-        const seenArray = lastMessage?.seen || [];
+        if (isOwn) return true;
+
+        const seenArray = lastMessage.seen || [];
 
         if (!userEmail) return false;
 
-        return seenArray.filter(user => user.email !== userEmail).length !== 0
-    }, [lastMessage, userEmail])
+        return seenArray
+            .filter((user) => user.email === userEmail).length !== 0;
+    }, [userEmail, lastMessage, isOwn]);
 
     const lastMessageText = useMemo(() => {
         if (lastMessage?.image) return 'Sent an image'
