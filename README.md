@@ -9,7 +9,7 @@
 ```
 You can use the existing credentials:
 EMAIL: killua@killua.pl
-PASSWORD: killua
+PASSWORD: test
 ```
 
 <h3> 🛠 &nbsp;Secreens</h3>
