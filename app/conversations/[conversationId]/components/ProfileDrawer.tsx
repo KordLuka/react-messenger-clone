@@ -3,6 +3,7 @@
 import Avatar from "@/app/components/Avatar";
 import AvatarGroup from "@/app/components/AvatarGroup";
 import ConfirmModal from "@/app/conversations/[conversationId]/components/ConfirmModal";
+import useActiveList from "@/app/hooks/useActiveList";
 import useOtherUser from "@/app/hooks/useOtherUser";
 import { Dialog, Transition } from "@headlessui/react";
 import { Conversation, User } from "@prisma/client";
@@ -20,7 +21,11 @@ interface ProfileDrawerProps {
 
 const ProfileDrawer: React.FC<ProfileDrawerProps> = ({ isOpen, onClose, data }) => {
     const otherUser = useOtherUser(data);
-    const [confirmOpen, setConfirmOpen] = useState(false)
+    const { members } = useActiveList();
+    const [confirmOpen, setConfirmOpen] = useState(false);
+
+    const isActive = !!members.find(member => member === otherUser?.email);
+
     const joinedDate = useMemo(() => {
         return format(new Date(otherUser.createdAt), 'PP')
     }, [otherUser.createdAt])
@@ -28,8 +33,8 @@ const ProfileDrawer: React.FC<ProfileDrawerProps> = ({ isOpen, onClose, data }) 
         return data?.name || otherUser?.name
     }, [data.name, otherUser.name])
     const statusText = useMemo(() => {
-        return data.isGroup ? `${data.userIds.length} members` : 'Active'
-    }, [data])
+        return data.isGroup ? `${data.userIds.length} members` : isActive ? 'Active' : 'Offline'
+    }, [data, isActive])
 
     return (
         <>
