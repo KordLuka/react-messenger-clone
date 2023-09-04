@@ -3,9 +3,13 @@
 [![React][react]][react-url]
 [![Next][next]][next-url]
 
-<br/>
+<h3> 🛠 &nbsp;Live</h3>
+<a href="https://react-rent-clone.vercel.app/"> live </a>
 
-<h3> 🛠 &nbsp;Few words...</h3>
+<h3> 🛠 &nbsp;Secreens</h3>
+
+![image](https://github.com/KordLuka/react-messenger-clone/assets/142796059/56b1925f-059e-4e2c-bdf8-2287ef36e61f)
+
 
 <br />
 
