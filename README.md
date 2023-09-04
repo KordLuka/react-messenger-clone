@@ -4,7 +4,7 @@
 [![Next][next]][next-url]
 
 <h3> 🛠 &nbsp;Live</h3>
-<a href="https://react-rent-clone.vercel.app/"> live </a>
+<a href="https://react-messages-clone.vercel.app/"> live </a>
 
 <h3> 🛠 &nbsp;Secreens</h3>
 
