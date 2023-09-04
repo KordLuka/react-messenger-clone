@@ -6,6 +6,12 @@
 <h3> 🛠 &nbsp;Live</h3>
 <a href="https://react-messages-clone.vercel.app/"> live </a>
 
+```
+You can use the existing credentials:
+EMAIL: killua@killua.pl
+PASSWORD: killua
+```
+
 <h3> 🛠 &nbsp;Secreens</h3>
 
 ![image](https://github.com/KordLuka/react-messenger-clone/assets/142796059/56b1925f-059e-4e2c-bdf8-2287ef36e61f)
